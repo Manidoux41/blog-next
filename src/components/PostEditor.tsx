@@ -4,9 +4,11 @@ import ImageUploader from "@/components/ImageUploader";
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
+import { PostWithAuthorAndCategories, Category } from "@/types";
+
 interface PostEditorProps {
-  post: any;
-  categories: any[];
+  post: PostWithAuthorAndCategories | null;
+  categories: Category[];
 }
 
 export default function PostEditor({ post, categories }: PostEditorProps) {

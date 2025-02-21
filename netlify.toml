@@ -1,6 +1,6 @@
 [build]
-  command = "go mod init blog-next && go build -o main ."
-  publish = "public"
+  command = "npm install && npm run build"
+  publish = ".next"
 
 [build.environment]
-  GO_VERSION = "1.19"
+  NODE_VERSION = "20"

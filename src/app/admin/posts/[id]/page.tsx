@@ -30,9 +30,9 @@ interface PageProps {
   searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-export default async function PostEditorPage(props: PageProps) {
+export default async function PostEditorPage({ params, searchParams }: PageProps) {
   const session = await getServerSession(authOptions);
-  const postId = props.params.id;
+  const postId = params.id;
   const [post, categories] = await Promise.all([
     postId === 'new' ? null : getPost(postId),
     getCategories(),

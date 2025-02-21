@@ -1,5 +1,5 @@
 [build]
-  command = "go build -o main ."
+  command = "go mod init blog-next && go build -o main ."
   publish = "public"
 
 [build.environment]

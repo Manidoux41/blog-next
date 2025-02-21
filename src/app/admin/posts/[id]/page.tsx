@@ -24,7 +24,9 @@ async function getCategories() {
 }
 
 interface PageProps {
-  params: { id: string };
+  params: {
+    id: string;
+  };
   searchParams?: { [key: string]: string | string[] | undefined };
 }
 

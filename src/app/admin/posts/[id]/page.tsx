@@ -23,9 +23,14 @@ async function getCategories() {
   return await prisma.category.findMany();
 }
 
-export default async function PostEditorPage({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: { id: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
+
+export default async function PostEditorPage(props: PageProps) {
   const session = await getServerSession(authOptions);
-  const postId = await Promise.resolve(params.id);
+  const postId = props.params.id;
   const [post, categories] = await Promise.all([
     postId === 'new' ? null : getPost(postId),
     getCategories(),
